@@ -1,0 +1,20 @@
+.wrapper {
+  margin-top: 12px;
+  background: #614101;
+  padding-bottom: 21px;
+}
+
+.wrapper button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.qna {
+  margin-top: 21px;
+  color: #fff;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { accordionData } from "./accordionData";
+import styles from "./styles.module.css";
 
 export default function Accordion() {
   const [selected, setSelected] = useState(null);
@@ -28,31 +29,34 @@ export default function Accordion() {
     setMultipleSelected(selectedCopy);
   }
 
-  console.log(multipleSelected);
-
   return (
-    <div>
+    <div className={styles.wrapper}>
       <button onClick={handleMultipleSelection}>
         {multipleSelection
           ? "Disable Multiple Selection"
           : "Enable Multiple Selection"}
       </button>
-      <div>
+      <div className={styles.accordion}>
         {accordionData.map((item) => (
-          <div key={item.id}>
-            <h3>{item.question}</h3>
-            <span
-              onClick={
-                multipleSelection
-                  ? () => handleMultipleShowAnswer(item.id)
-                  : () => handleShowAnswer(item.id)
-              }
-            >
-              +
-            </span>
+          <div key={item.id} className={styles.qna}>
+            <div className={styles.question}>
+              <h3>{item.question}</h3>
+              <span
+                onClick={
+                  multipleSelection
+                    ? () => handleMultipleShowAnswer(item.id)
+                    : () => handleShowAnswer(item.id)
+                }
+              >
+                {selected === item.id ||
+                multipleSelected.indexOf(item.id) !== -1
+                  ? "-"
+                  : "+"}
+              </span>
+            </div>
             {selected === item.id ||
             multipleSelected.indexOf(item.id) !== -1 ? (
-              <h3>{item.answer}</h3>
+              <h4 className={styles.answer}>{item.answer}</h4>
             ) : null}
           </div>
         ))}
