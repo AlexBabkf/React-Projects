@@ -30,37 +30,40 @@ export default function Accordion() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <button onClick={handleMultipleSelection}>
-        {multipleSelection
-          ? "Disable Multiple Selection"
-          : "Enable Multiple Selection"}
-      </button>
-      <div className={styles.accordion}>
-        {accordionData.map((item) => (
-          <div key={item.id} className={styles.qna}>
-            <div className={styles.question}>
-              <h3>{item.question}</h3>
-              <span
-                onClick={
-                  multipleSelection
-                    ? () => handleMultipleShowAnswer(item.id)
-                    : () => handleShowAnswer(item.id)
-                }
-              >
-                {selected === item.id ||
-                multipleSelected.indexOf(item.id) !== -1
-                  ? "-"
-                  : "+"}
-              </span>
+    <section>
+      <h1>Accordion Selector</h1>
+      <div className={styles.wrapper}>
+        <button onClick={handleMultipleSelection}>
+          {multipleSelection
+            ? "Disable Multiple Selection"
+            : "Enable Multiple Selection"}
+        </button>
+        <div className={styles.accordion}>
+          {accordionData.map((item) => (
+            <div key={item.id} className={styles.qna}>
+              <div className={styles.question}>
+                <h3>{item.question}</h3>
+                <span
+                  onClick={
+                    multipleSelection
+                      ? () => handleMultipleShowAnswer(item.id)
+                      : () => handleShowAnswer(item.id)
+                  }
+                >
+                  {selected === item.id ||
+                  multipleSelected.indexOf(item.id) !== -1
+                    ? "-"
+                    : "+"}
+                </span>
+              </div>
+              {selected === item.id ||
+              multipleSelected.indexOf(item.id) !== -1 ? (
+                <h4 className={styles.answer}>{item.answer}</h4>
+              ) : null}
             </div>
-            {selected === item.id ||
-            multipleSelected.indexOf(item.id) !== -1 ? (
-              <h4 className={styles.answer}>{item.answer}</h4>
-            ) : null}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

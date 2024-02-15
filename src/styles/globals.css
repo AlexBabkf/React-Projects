@@ -12,3 +12,12 @@ body {
   overflow-x: hidden;
   text-align: center;
 }
+
+section {
+  margin-top: 39px;
+  margin-bottom: 39px;
+}
+
+h1 {
+  margin-bottom: 12px;
+}

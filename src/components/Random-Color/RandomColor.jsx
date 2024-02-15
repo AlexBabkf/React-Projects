@@ -37,19 +37,24 @@ export default function RandomColor() {
   console.log(color, colorType);
 
   return (
-    <div className={styles.componentWrapper}>
-      <div className={styles.buttonWrapper}>
-        <button onClick={() => setColorType("HEX")}>Create HEX color</button>
-        <button onClick={() => setColorType("RGB")}>Create RGB color</button>
-        <button
-          onClick={colorType === "HEX" ? handleGenerateHEX : handleGenerateRGB}
-        >
-          Generate Random Color
-        </button>
+    <section>
+      <h1>Random Color Generator</h1>
+      <div className={styles.componentWrapper}>
+        <div className={styles.buttonWrapper}>
+          <button onClick={() => setColorType("HEX")}>Create HEX color</button>
+          <button onClick={() => setColorType("RGB")}>Create RGB color</button>
+          <button
+            onClick={
+              colorType === "HEX" ? handleGenerateHEX : handleGenerateRGB
+            }
+          >
+            Generate Random Color
+          </button>
+        </div>
+        <div style={{ background: color }} className={styles.colorWrapper}>
+          <h2>{color}</h2>
+        </div>
       </div>
-      <div style={{ background: color }} className={styles.colorWrapper}>
-        <h2>{color}</h2>
-      </div>
-    </div>
+    </section>
   );
 }
