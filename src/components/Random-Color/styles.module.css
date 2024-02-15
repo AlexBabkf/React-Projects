@@ -1,0 +1,21 @@
+.componentWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttonWrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.colorWrapper {
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px;
+  max-width: 100%;
+}
