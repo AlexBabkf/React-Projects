@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import style from "./loadMore.module.css";
 
 export default function LoadMore({ limit = 20 }) {
   const [count, setCount] = useState(0);
@@ -31,15 +32,18 @@ export default function LoadMore({ limit = 20 }) {
   return (
     <section>
       <h1>Load More Function</h1>
-      <div>
-        {products.length &&
-          products.map((prod) => (
-            <div key={prod.id}>
-              <img src={prod.thumbnail} alt={prod.title} />
-              <p>{prod.title}</p>
-            </div>
-          ))}
-        <div>
+
+      <div className={style.component}>
+        <div className={style.productContainer}>
+          {products.length &&
+            products.map((prod) => (
+              <div className={style.product} key={prod.id}>
+                <img src={prod.thumbnail} alt={prod.title} />
+                <p>{prod.title}</p>
+              </div>
+            ))}
+        </div>
+        <div className={style.buttonContainer}>
           {loading ? (
             <p>Loading...</p>
           ) : (
