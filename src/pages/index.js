@@ -1,5 +1,6 @@
 import Accordion from "@/components/Accordion/Accordion";
 import ImageSlider from "@/components/ImageSlider/ImageSlider";
+import LoadMore from "@/components/LoadMore/LoadMore";
 import RandomColor from "@/components/Random-Color/RandomColor";
 import StarRating from "@/components/StarRating/StarRating";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <RandomColor />
       <StarRating />
       <ImageSlider />
+      <LoadMore />
     </>
   );
 }
