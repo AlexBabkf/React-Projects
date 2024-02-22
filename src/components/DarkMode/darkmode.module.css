@@ -1,0 +1,27 @@
+/* colors are on globals.css */
+
+.darkmode {
+  background-color: var(--background);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+.darkmode p {
+  color: var(--text-primary);
+  font-size: 40px;
+  margin: 0px;
+}
+
+.darkmode button {
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  color: var(--button-text);
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
